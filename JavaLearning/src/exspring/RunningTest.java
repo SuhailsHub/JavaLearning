@@ -1,0 +1,15 @@
+package exspring;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class RunningTest {
+
+	public static void main(String[] args) {
+		ApplicationContext context = new ClassPathXmlApplicationContext("springConfig.xml");
+		Student student = (Student)context.getBean("studentbean");
+		student.displayInfo();
+
+	}
+
+}
