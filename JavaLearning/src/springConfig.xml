@@ -11,4 +11,20 @@
     	<property name="id" value="119034"></property>
     	<property name="section" value="A"></property>
     </bean>
+    <bean id="CI" class="constructor_injuction.Student">
+    	<constructor-arg value="23"></constructor-arg>
+    	<constructor-arg value="Suhail"></constructor-arg>
+    </bean>
+    <bean id="ciDependentObj" class="constructor_injuction.EmpDetails">
+    	<constructor-arg value="23" type="int" ></constructor-arg>
+    	<constructor-arg value="Suhail"></constructor-arg>
+    	<constructor-arg>
+    		<ref bean="empaddressbean"/>
+    	</constructor-arg>
+    </bean>
+    <bean id="empaddressbean" class="constructor_injuction.EmpAddress">
+    	<constructor-arg value="Tenkasi"></constructor-arg>
+    	<constructor-arg value="Tamil Nadu"></constructor-arg>
+    	<constructor-arg value="India"></constructor-arg>
+    </bean>
 </beans>
