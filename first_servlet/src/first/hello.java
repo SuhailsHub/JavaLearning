@@ -26,13 +26,13 @@ public class hello extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.setContentType("text/html");
-		PrintWriter out = response.getWriter();
-		out.print("<html><body>");
-		out.print("<h1>Hello World<h1>");
-		out.print("</body></html");
+		res.setContentType("text/html");
+		PrintWriter pw=res.getWriter();
+		String name=req.getParameter("name");
+		pw.println("Welcome "+name);
+		System.out.println(name);
 	}
 
 }
